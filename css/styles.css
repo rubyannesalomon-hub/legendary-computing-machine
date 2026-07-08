@@ -84,6 +84,7 @@ header.site {
 }
 header.site.scrolled { box-shadow: 0 4px 18px rgba(46, 42, 40, 0.06); }
 .nav {
+  position: relative; /* Wichtig für das Dropdown-Menü */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -116,7 +117,7 @@ header.site.scrolled { box-shadow: 0 4px 18px rgba(46, 42, 40, 0.06); }
 }
 .brand-tag { font-size: 0.72rem; color: var(--ink-soft); display: block; margin-top: -2px; }
 
-/* Nav links */
+/* ---------- DESKTOP MENÜ ---------- */
 .links {
   display: flex;
   align-items: center;
@@ -124,7 +125,6 @@ header.site.scrolled { box-shadow: 0 4px 18px rgba(46, 42, 40, 0.06); }
 .links ul {
   display: flex;
   align-items: center;
-  gap: 4px;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -135,15 +135,32 @@ header.site.scrolled { box-shadow: 0 4px 18px rgba(46, 42, 40, 0.06); }
   text-decoration: none;
   color: var(--ink-soft);
   font-weight: 500;
-  padding: 9px 18px;
-  border-radius: 999px;
-  transition: color 0.2s ease, background 0.2s ease;
+  padding: 8px 4px;
+  margin: 0 16px;
+  position: relative;
+  transition: color 0.3s ease;
 }
-.links a:hover { color: var(--dusk-deep); background: rgba(40, 54, 69, 0.08); }
+
+/* Animierter Unterstrich */
+.links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--clay);
+  transition: width 0.3s ease;
+}
+
+.links a:hover,
 .links a.active {
   color: var(--dusk-deep);
-  background: rgba(40, 54, 69, 0.12);
-  font-weight: 600;
+}
+
+.links a:hover::after,
+.links a.active::after {
+  width: 100%;
 }
 
 /* Hamburger toggle */
@@ -151,27 +168,26 @@ header.site.scrolled { box-shadow: 0 4px 18px rgba(46, 42, 40, 0.06); }
   display: none;
   position: relative;
   width: 42px; height: 42px;
-  background: var(--paper-deep);
-  border: 1px solid var(--line);
-  border-radius: 12px;
+  background: transparent;
+  border: none;
   cursor: pointer;
   padding: 0;
   flex-shrink: 0;
 }
 .nav-toggle .bar {
   position: absolute;
-  left: 11px; right: 11px;
+  left: 8px; right: 8px;
   height: 2px;
   background: var(--dusk-deep);
   border-radius: 2px;
-  transition: transform 0.25s ease, opacity 0.2s ease;
+  transition: transform 0.3s ease, opacity 0.2s ease, background 0.3s ease;
 }
-.nav-toggle .bar:nth-child(1) { top: 14px; }
+.nav-toggle .bar:nth-child(1) { top: 12px; }
 .nav-toggle .bar:nth-child(2) { top: 20px; }
-.nav-toggle .bar:nth-child(3) { top: 26px; }
-.nav-toggle.open .bar:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.nav-toggle .bar:nth-child(3) { top: 28px; }
+.nav-toggle.open .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); background: var(--clay-deep); }
 .nav-toggle.open .bar:nth-child(2) { opacity: 0; }
-.nav-toggle.open .bar:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+.nav-toggle.open .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); background: var(--clay-deep); }
 
 .nav-backdrop {
   display: none;
@@ -184,7 +200,7 @@ header.site.scrolled { box-shadow: 0 4px 18px rgba(46, 42, 40, 0.06); }
 }
 .nav-backdrop.open { display: block; opacity: 1; }
 
-/* ---------- Wave divider (signature element) ---------- */
+/* ---------- Wave divider ---------- */
 .wave-divider {
   width: 100%;
   display: block;
@@ -373,59 +389,72 @@ footer.site a:hover { color: var(--moss); }
 .legal h2 { margin-top: 1.4em; }
 .legal p { color: var(--ink); }
 
-/* ---------- Responsive Mobile Menu ---------- */
+/* ---------- Responsive ---------- */
+@media (max-width: 860px) {
+  .hero, .two-col, .contact-grid { grid-template-columns: 1fr; }
+  .hero-figure { order: -1; }
+  .course { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+}
+
+/* ---------- NEUES KOMPAKTES DROPDOWN MENÜ ---------- */
 @media (max-width: 720px) {
   .links {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 280px;
-    background: var(--paper);
-    padding: 90px 32px 40px; /* Ausreichend Platz oben für den Button */
-    box-shadow: -5px 0 20px rgba(0,0,0,0.1);
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
+    position: absolute;
+    top: 100%; /* Menü klappt exakt unter dem Header auf */
+    left: 0;
+    width: 100%;
+    background: var(--paper); /* Gleiche Farbe wie der Hintergrund */
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 12px 24px rgba(46, 42, 40, 0.08);
+    padding: 16px 0 24px;
+    
+    /* Zarte Einblend-Animation statt wildem Reinsliden */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: all 0.3s ease;
     z-index: 41;
-    overflow-y: auto;
   }
 
   .links.open {
-    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
   }
 
   .links ul {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     width: 100%;
-    gap: 0;
+    gap: 16px; /* Kompakt und aufgeräumt */
   }
 
   .links ul li {
-    width: 100%; /* Zieht die Listenpunkte auf volle Breite */
+    width: 100%;
+    text-align: center;
   }
 
   .links a {
-    display: block;
-    width: 100%;
-    padding: 18px 0; /* Sehr große, bequeme Klickfläche */
-    font-size: 1.25rem;
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0;
+    
+    /* Ganz normale Schriftgröße für optimale Lesbarkeit */
+    font-family: var(--font-body);
+    font-size: 1.15rem; 
+    font-weight: 500;
     color: var(--ink);
-    border-radius: 0;
-    background: none;
-    border: none;
-    border-bottom: 1px solid var(--line); /* Klassische Trennlinie */
   }
 
-  /* Die Trennlinie beim letzten Element weglassen */
-  .links ul li:last-child a {
-    border-bottom: none;
+  /* Desktop-Unterstrich verstecken */
+  .links a::after {
+    display: none;
   }
 
   .links a.active {
-    color: var(--dusk-deep);
-    font-weight: 700;
-    background: none;
+    color: var(--clay);
+    font-weight: 600;
   }
 
   .nav-toggle {

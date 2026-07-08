@@ -56,10 +56,12 @@
         <div class="contact-line"><span class="ico">📷</span><span><a href="https://www.instagram.com/ruby_annesalomon/" target="_blank" rel="noopener">@ruby_annesalomon</a></span></div>
       </div>
 
-      <form class="contact-form" action="https://formsubmit.co/ruby.annesalomon@gmail.com" method="POST">
-        <input type="hidden" name="_subject" value="Neue Nachricht von ruby-anne.de">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
+      <form class="contact-form" name="kontakt" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="kontakt">
+        <input type="hidden" name="subject" value="Neue Nachricht von ruby-anne.de">
+        <p style="display:none">
+          <label>Nicht ausfüllen: <input name="bot-field"></label>
+        </p>
 
         <div class="form-row">
           <div>

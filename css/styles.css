@@ -84,7 +84,6 @@ header.site {
 }
 header.site.scrolled { box-shadow: 0 4px 18px rgba(46, 42, 40, 0.06); }
 .nav {
-  position: relative; /* Wichtig für das Dropdown-Menü */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -117,7 +116,7 @@ header.site.scrolled { box-shadow: 0 4px 18px rgba(46, 42, 40, 0.06); }
 }
 .brand-tag { font-size: 0.72rem; color: var(--ink-soft); display: block; margin-top: -2px; }
 
-/* ---------- DESKTOP MENÜ ---------- */
+/* Nav links */
 .links {
   display: flex;
   align-items: center;
@@ -125,6 +124,7 @@ header.site.scrolled { box-shadow: 0 4px 18px rgba(46, 42, 40, 0.06); }
 .links ul {
   display: flex;
   align-items: center;
+  gap: 4px;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -135,32 +135,15 @@ header.site.scrolled { box-shadow: 0 4px 18px rgba(46, 42, 40, 0.06); }
   text-decoration: none;
   color: var(--ink-soft);
   font-weight: 500;
-  padding: 8px 4px;
-  margin: 0 16px;
-  position: relative;
-  transition: color 0.3s ease;
+  padding: 9px 18px;
+  border-radius: 999px;
+  transition: color 0.2s ease, background 0.2s ease;
 }
-
-/* Animierter Unterstrich */
-.links a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background: var(--clay);
-  transition: width 0.3s ease;
-}
-
-.links a:hover,
+.links a:hover { color: var(--dusk-deep); background: rgba(40, 54, 69, 0.08); }
 .links a.active {
   color: var(--dusk-deep);
-}
-
-.links a:hover::after,
-.links a.active::after {
-  width: 100%;
+  background: rgba(40, 54, 69, 0.12);
+  font-weight: 600;
 }
 
 /* Hamburger toggle */
@@ -168,26 +151,27 @@ header.site.scrolled { box-shadow: 0 4px 18px rgba(46, 42, 40, 0.06); }
   display: none;
   position: relative;
   width: 42px; height: 42px;
-  background: transparent;
-  border: none;
+  background: var(--paper-deep);
+  border: 1px solid var(--line);
+  border-radius: 12px;
   cursor: pointer;
   padding: 0;
   flex-shrink: 0;
 }
 .nav-toggle .bar {
   position: absolute;
-  left: 8px; right: 8px;
+  left: 11px; right: 11px;
   height: 2px;
   background: var(--dusk-deep);
   border-radius: 2px;
-  transition: transform 0.3s ease, opacity 0.2s ease, background 0.3s ease;
+  transition: transform 0.25s ease, opacity 0.2s ease;
 }
-.nav-toggle .bar:nth-child(1) { top: 12px; }
+.nav-toggle .bar:nth-child(1) { top: 14px; }
 .nav-toggle .bar:nth-child(2) { top: 20px; }
-.nav-toggle .bar:nth-child(3) { top: 28px; }
-.nav-toggle.open .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); background: var(--clay-deep); }
+.nav-toggle .bar:nth-child(3) { top: 26px; }
+.nav-toggle.open .bar:nth-child(1) { transform: translateY(6px) rotate(45deg); }
 .nav-toggle.open .bar:nth-child(2) { opacity: 0; }
-.nav-toggle.open .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); background: var(--clay-deep); }
+.nav-toggle.open .bar:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
 .nav-backdrop {
   display: none;
@@ -200,7 +184,7 @@ header.site.scrolled { box-shadow: 0 4px 18px rgba(46, 42, 40, 0.06); }
 }
 .nav-backdrop.open { display: block; opacity: 1; }
 
-/* ---------- Wave divider ---------- */
+/* ---------- Wave divider (signature element) ---------- */
 .wave-divider {
   width: 100%;
   display: block;
@@ -388,14 +372,6 @@ footer.site a:hover { color: var(--moss); }
 /* Impressum text page */
 .legal h2 { margin-top: 1.4em; }
 .legal p { color: var(--ink); }
-
-/* ---------- Responsive ---------- */
-@media (max-width: 860px) {
-  .hero, .two-col, .contact-grid { grid-template-columns: 1fr; }
-  .hero-figure { order: -1; }
-  .course { grid-template-columns: 1fr; }
-  .form-row { grid-template-columns: 1fr; }
-}
 
 /* ---------- NEUES KOMPAKTES DROPDOWN MENÜ ---------- */
 @media (max-width: 720px) {

@@ -373,71 +373,63 @@ footer.site a:hover { color: var(--moss); }
 .legal h2 { margin-top: 1.4em; }
 .legal p { color: var(--ink); }
 
-/* ---------- Responsive ---------- */
-@media (max-width: 860px) {
-  .hero, .two-col, .contact-grid { grid-template-columns: 1fr; }
-  .hero-figure { order: -1; }
-  .course { grid-template-columns: 1fr; }
-  .form-row { grid-template-columns: 1fr; }
-}
 /* ---------- Responsive Mobile Menu ---------- */
 @media (max-width: 720px) {
   .links {
     position: fixed;
-    top: 0; 
-    right: 0; 
+    top: 0;
+    right: 0;
     bottom: 0;
-    width: min(82vw, 300px);
+    width: 280px;
     background: var(--paper);
-    /* Oben Platz für das X-Icon lassen, unten sanft auslaufen lassen */
-    padding: 80px 16px 40px 16px;
-    box-shadow: -10px 0 30px rgba(46, 42, 40, 0.12);
+    padding: 90px 32px 40px; /* Ausreichend Platz oben für den Button */
+    box-shadow: -5px 0 20px rgba(0,0,0,0.1);
     transform: translateX(100%);
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.3s ease;
     z-index: 41;
-    
-    /* WICHTIG: Erlaubt das Scrollen im Menü, falls das Display klein ist */
     overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-  
-  .links.open { 
-    transform: translateX(0); 
-  }
-  
-  .links ul {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 8px; /* Etwas mehr Luft zwischen den Boxen */
-    font-size: 1.1rem;
-  }
-  
-  .links a { 
-    display: block;
-    padding: 14px 20px; 
-    border-radius: 14px;
-    background: rgba(40, 54, 69, 0.02); /* Ganz zarte, edle Hinterlegung für alle Punkte */
-    border: 1px solid rgba(40, 54, 69, 0.04);
-    transition: all 0.2s ease;
-  }
-  
-  /* Stil für den jeweils aktiven Menüpunkt auf dem Smartphone */
-  .links a.active {
-    color: var(--paper);
-    background: var(--dusk); /* Wunderschöner, satter Kontrast für die aktive Seite */
-    border-color: var(--dusk-deep);
-    font-weight: 600;
   }
 
-  /* Leichter Hover-/Tipp-Effekt auf dem Handy */
-  .links a:not(.active):hover,
-  .links a:not(.active):active {
-    background: rgba(40, 54, 69, 0.08);
-    color: var(--dusk-deep);
+  .links.open {
+    transform: translateX(0);
   }
-  
-  .nav-toggle { 
-    display: block; 
-    z-index: 42; /* Das Hamburger-Menü bleibt immer bedienbar obenauf */
+
+  .links ul {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 0;
+  }
+
+  .links ul li {
+    width: 100%; /* Zieht die Listenpunkte auf volle Breite */
+  }
+
+  .links a {
+    display: block;
+    width: 100%;
+    padding: 18px 0; /* Sehr große, bequeme Klickfläche */
+    font-size: 1.25rem;
+    color: var(--ink);
+    border-radius: 0;
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--line); /* Klassische Trennlinie */
+  }
+
+  /* Die Trennlinie beim letzten Element weglassen */
+  .links ul li:last-child a {
+    border-bottom: none;
+  }
+
+  .links a.active {
+    color: var(--dusk-deep);
+    font-weight: 700;
+    background: none;
+  }
+
+  .nav-toggle {
+    display: block;
+    z-index: 42;
   }
 }

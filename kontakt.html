@@ -56,45 +56,50 @@
         <div class="contact-line"><span class="ico">📷</span><span><a href="https://www.instagram.com/ruby_annesalomon/" target="_blank" rel="noopener">@ruby_annesalomon</a></span></div>
       </div>
 
-      <form class="contact-form" name="kontakt" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="kontakt">
-        <input type="hidden" name="subject" value="Neue Nachricht von ruby-anne.de">
-        <p style="display:none">
-          <label>Nicht ausfüllen: <input name="bot-field"></label>
-        </p>
+     <form class="contact-form" name="kontakt" method="POST" action="/erfolg.html" data-netlify="true" netlify-honeypot="bot-field">
+  <input type="hidden" name="form-name" value="kontakt">
+  <input type="hidden" name="subject" value="Neue Nachricht von ruby-anne.de">
+  
+  <p style="display:none">
+    <label>Nicht ausfüllen: <input name="bot-field"></label>
+  </p>
 
-        <div class="form-row">
-          <div>
-            <label for="name">Name</label>
-            <input type="text" id="name" name="Name" required>
-          </div>
-          <div>
-            <label for="email">E-Mail-Adresse</label>
-            <input type="email" id="email" name="E-Mail" required>
-          </div>
-        </div>
-        <div class="form-row">
-          <div>
-            <label for="phone">Telefonnummer</label>
-            <input type="tel" id="phone" name="Telefon">
-          </div>
-          <div>
-            <label for="address">Adresse</label>
-            <input type="text" id="address" name="Adresse">
-          </div>
-        </div>
-        <div>
-          <label for="subject">Betreff</label>
-          <input type="text" id="subject" name="Betreff">
-        </div>
-        <div>
-          <label for="message">Nachricht</label>
-          <textarea id="message" name="Nachricht" required></textarea>
-        </div>
-        <div class="btn-row">
-          <button type="submit" class="btn btn-primary" style="border:none; cursor:pointer;">Absenden</button>
-        </div>
-      </form>
+  <div class="form-row">
+    <div>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div>
+      <label for="email">E-Mail-Adresse</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+  </div>
+  
+  <div class="form-row">
+    <div>
+      <label for="phone">Telefonnummer</label>
+      <input type="tel" id="phone" name="telefon">
+    </div>
+    <div>
+      <label for="address">Adresse</label>
+      <input type="text" id="address" name="adresse">
+    </div>
+  </div>
+  
+  <div>
+    <label for="subject">Betreff</label>
+    <input type="text" id="subject" name="betreff">
+  </div>
+  
+  <div>
+    <label for="message">Nachricht</label>
+    <textarea id="message" name="nachricht" required></textarea>
+  </div>
+  
+  <div class="btn-row">
+    <button type="submit" class="btn btn-primary" style="border:none; cursor:pointer;">Absenden</button>
+  </div>
+</form>
 
     </div>
   </section>

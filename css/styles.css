@@ -380,25 +380,64 @@ footer.site a:hover { color: var(--moss); }
   .course { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
 }
+/* ---------- Responsive Mobile Menu ---------- */
 @media (max-width: 720px) {
   .links {
     position: fixed;
-    top: 0; right: 0; bottom: 0;
-    width: min(78vw, 320px);
+    top: 0; 
+    right: 0; 
+    bottom: 0;
+    width: min(82vw, 300px);
     background: var(--paper);
-    padding: 88px 8px 28px;
-    box-shadow: -8px 0 24px rgba(46, 42, 40, 0.08);
+    /* Oben Platz für das X-Icon lassen, unten sanft auslaufen lassen */
+    padding: 80px 16px 40px 16px;
+    box-shadow: -10px 0 30px rgba(46, 42, 40, 0.12);
     transform: translateX(100%);
-    transition: transform 0.28s ease;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 41;
+    
+    /* WICHTIG: Erlaubt das Scrollen im Menü, falls das Display klein ist */
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
-  .links.open { transform: translateX(0); }
+  
+  .links.open { 
+    transform: translateX(0); 
+  }
+  
   .links ul {
     flex-direction: column;
     align-items: stretch;
-    gap: 4px;
-    font-size: 1.05rem;
+    gap: 8px; /* Etwas mehr Luft zwischen den Boxen */
+    font-size: 1.1rem;
   }
-  .links a { padding: 14px 20px; border-radius: 12px; }
-  .nav-toggle { display: block; }
+  
+  .links a { 
+    display: block;
+    padding: 14px 20px; 
+    border-radius: 14px;
+    background: rgba(40, 54, 69, 0.02); /* Ganz zarte, edle Hinterlegung für alle Punkte */
+    border: 1px solid rgba(40, 54, 69, 0.04);
+    transition: all 0.2s ease;
+  }
+  
+  /* Stil für den jeweils aktiven Menüpunkt auf dem Smartphone */
+  .links a.active {
+    color: var(--paper);
+    background: var(--dusk); /* Wunderschöner, satter Kontrast für die aktive Seite */
+    border-color: var(--dusk-deep);
+    font-weight: 600;
+  }
+
+  /* Leichter Hover-/Tipp-Effekt auf dem Handy */
+  .links a:not(.active):hover,
+  .links a:not(.active):active {
+    background: rgba(40, 54, 69, 0.08);
+    color: var(--dusk-deep);
+  }
+  
+  .nav-toggle { 
+    display: block; 
+    z-index: 42; /* Das Hamburger-Menü bleibt immer bedienbar obenauf */
+  }
 }

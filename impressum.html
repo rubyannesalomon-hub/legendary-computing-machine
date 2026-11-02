@@ -5,46 +5,53 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Impressum &amp; Datenschutz | Ruby rund um dein Baby</title>
 <meta name="description" content="Impressum und Datenschutzerklärung von Ruby — rund um dein Baby, Anne Salomon, Hürth.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://ruby-anne.de/impressum">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="Ruby – rund um dein Baby">
+<meta property="og:title" content="Impressum &amp; Datenschutz | Ruby rund um dein Baby">
+<meta property="og:description" content="Impressum und Datenschutzerklärung von Ruby — rund um dein Baby, Anne Salomon, Hürth.">
+<meta property="og:url" content="https://ruby-anne.de/impressum">
+<link rel="preload" href="fonts/work-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/fraunces-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="icon" type="image/png" href="images/favicon-32.png">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
 
 <header class="site">
   <div class="nav">
     <a class="brand" href="index.html">
-      <span class="brand-mark"><img src="images/logo_transparent.avif" alt="Ruby Logo"></span>
+      <span class="brand-mark"><img src="images/logo_transparent.avif" alt="Ruby Logo" width="62" height="62"></span>
       <span>
         <span class="brand-name">Ruby</span>
         <span class="brand-tag">rund um dein Baby</span>
       </span>
     </a>
-    <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">
+    <button class="nav-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="hauptmenue">
       <span class="bar"></span><span class="bar"></span><span class="bar"></span>
     </button>
-    <nav class="links" aria-label="Hauptnavigation">
+    <nav class="links" id="hauptmenue" aria-label="Hauptnavigation">
       <ul>
       <li><a href="index.html">Start</a></li>
       <li><a href="ueber-anne.html">Über Anne</a></li>
       <li><a href="leistungen.html">Leistungen</a></li>
       <li><a href="kurse.html">Kurse</a></li>
       <li><a href="kontakt.html">Kontakt</a></li>
-    </ul>
+      </ul>
     </nav>
   </div>
 </header>
 <div class="nav-backdrop"></div>
 
-<main>
-  <section class="wrap legal" style="padding-top:56px; max-width: 760px;">
+<main id="main">
+  <section class="wrap legal">
     <span class="eyebrow">Rechtliches</span>
     <h1>Impressum &amp; Datenschutzerklärung</h1>
 
-    <h2>Impressum</h2>
-    <p>Angaben gemäß § 5 TMG</p>
+    <h2 id="impressum">Impressum</h2>
+    <p>Angaben gemäß § 5 DDG</p>
     <p>
       Ruby — rund um dein Baby<br>
       Anne Salomon<br>
@@ -54,12 +61,16 @@
 
     <h3>Kontakt</h3>
     <p>
-      Telefon: 0177 2582071<br>
+      Telefon: <a href="tel:+491772582071">0177 2582071</a><br>
       E-Mail: <a href="mailto:ruby.annesalomon@gmail.com">ruby.annesalomon@gmail.com</a><br>
-      Website: <a href="https://www.ruby-anne.de">www.ruby-anne.de</a>
+      Website: <a href="https://ruby-anne.de">ruby-anne.de</a>
     </p>
 
-    <h3>Umsatzsteuer-Identifikationsnummer</h3>
+    <!-- HINWEIS: Berufsrechtliche Angaben bitte von Anne bestätigen lassen (reglementierter Beruf, § 5 DDG). -->
+    <h3>Berufsbezeichnung</h3>
+    <p>Gesundheits- und Kinderkrankenpflegerin (verliehen in der Bundesrepublik Deutschland)</p>
+
+    <h3>Umsatzsteuer</h3>
     <p>Ich bin Kleinunternehmerin im Sinne von § 19 UStG. Daher erfolgt kein Ausweis der Umsatzsteuer. Eine Umsatzsteuer-Identifikationsnummer wurde nicht vergeben.</p>
 
     <h3>Redaktionell verantwortlich gemäß § 18 Abs. 2 MStV</h3>
@@ -69,42 +80,54 @@
       50354 Hürth
     </p>
 
-    <h3>EU-Streitschlichtung</h3>
-    <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr/</a>. Unsere E-Mail-Adresse findet Ihr oben im Impressum.</p>
+    <h3>Verbraucherstreitbeilegung</h3>
+    <p>Ich bin nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
 
-    <h3>Verbraucherstreitbeilegung/Universalschlichtungsstelle</h3>
-    <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+    <h3>Hinweis zu den Angeboten</h3>
+    <p>Meine Angebote (Babymassage, Schlafcoaching, Beikostberatung, Kinesiotaping) ersetzen keine ärztliche oder hebammenseitige Untersuchung, Diagnose oder Behandlung.</p>
 
-    <h2>Datenschutzerklärung</h2>
+    <h2 id="datenschutz">Datenschutzerklärung</h2>
 
     <h3>1. Datenschutz auf einen Blick</h3>
-    <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Euren personenbezogenen Daten passiert, wenn Ihr diese Website besucht.</p>
+    <p>Die folgenden Hinweise geben einen Überblick darüber, was mit Euren personenbezogenen Daten passiert, wenn Ihr diese Website besucht. Personenbezogene Daten sind alle Daten, mit denen Ihr persönlich identifiziert werden könnt.</p>
+
+    <h3>2. Verantwortliche Stelle</h3>
     <p>
-      Verantwortliche Stelle: Anne Salomon – Ruby — rund um dein Baby<br>
-      Mohlbergstr. 9, 50354 Hürth<br>
-      E-Mail: <a href="mailto:ruby.annesalomon@gmail.com">ruby.annesalomon@gmail.com</a>
+      Anne Salomon – Ruby — rund um dein Baby<br>
+      Mohlbergstraße 9, 50354 Hürth<br>
+      E-Mail: <a href="mailto:ruby.annesalomon@gmail.com">ruby.annesalomon@gmail.com</a><br>
+      Telefon: 0177 2582071
     </p>
 
-    <h3>2. Datenerfassung auf dieser Website</h3>
-    <p><strong>Hosting.</strong> Wir hosten unsere Website bei dem Cloud-Anbieter Netlify. Dienstleister ist die Netlify, Inc., 512 2nd Street, Suite 200, San Francisco, CA 94107, USA (nachfolgend „Netlify“).</p>
-    <p>Netlify erhebt und speichert automatisch Informationen in sogenannten Server-Log-Dateien, die Euer Browser automatisch an Netlify übermittelt. Dies umfasst u.a. die IP-Adresse, Browsertyp und -version, das verwendete Betriebssystem, die Referrer-URL sowie die Uhrzeit der Serveranfrage. Die Verwendung von Netlify erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Wir haben ein berechtigtes Interesse an einer möglichst zuverlässigen, sicheren und fehlerfreien Darstellung unserer Website.</p>
-    <p>Da Daten in die USA übertragen werden können, weisen wir darauf hin, dass Netlify unter dem EU-US Data Privacy Framework zertifiziert ist, wodurch ein datenschutzrechtlich angemessenes Schutzniveau gewährleistet wird.</p>
-    
-    <p><strong>Kontaktformular (Netlify Forms).</strong> Wenn Ihr uns per Kontaktformular Anfragen zukommen lasst, werden Eure Angaben inklusive der dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung oder vorvertragliche Maßnahmen).</p>
-    <p>Die Formular-Inhalte werden technisch direkt über die Plattform von Netlify verarbeitet, verschlüsselt entgegengenommen und anschließend an uns per E-Mail zugestellt. Netlify speichert diese Formulardaten in unserem Auftrag, um die Übermittlung zu ermöglichen. Eine Weitergabe an unbefugte Dritte findet nicht statt.</p>
-    
-    <p><strong>Cookies.</strong> Wir verzichten auf dieser Website bewusst auf Analyse-Tools (wie Google Analytics) oder Werbe-Tracking von Drittanbietern. Es werden lediglich technisch notwendige Cookies gesetzt, die für den sicheren und fehlerfreien Betrieb der Website zwingend erforderlich sind (beispielsweise zur Gewährleistung der Formularsicherheit und Abwehr von Spam-Bots über das Netlify-Honeypot-Feld). Eine Einwilligung über einen gesonderten Cookie-Banner ist daher nicht erforderlich.</p>
+    <h3>3. Datenerfassung auf dieser Website</h3>
 
-    <h3>3. Eure Rechte</h3>
-    <p>Ihr habt jederzeit das Recht auf unentgeltliche Auskunft über Herkunft, Empfänger und Zweck Eurer gespeicherten personenbezogenen Daten. Ihr habt außerdem ein Recht auf Berichtigung oder Löschung dieser Daten. Hierzu sowie zu weiteren Fragen zum Thema Datenschutz könnt Ihr Euch jederzeit an die oben angegebene Adresse wenden. Des Weiteren steht Euch ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu (Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen).</p>
+    <p><strong>Hosting.</strong> Ich hoste diese Website bei Netlify, Inc., 512 2nd Street, Suite 200, San Francisco, CA 94107, USA („Netlify“). Netlify erhebt und speichert automatisch Informationen in sogenannten Server-Log-Dateien, die Euer Browser automatisch übermittelt. Das sind u. a. die IP-Adresse, Browsertyp und -version, das verwendete Betriebssystem, die Referrer-URL sowie die Uhrzeit der Serveranfrage. Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Ich habe ein berechtigtes Interesse an einer zuverlässigen, sicheren und fehlerfreien Darstellung dieser Website. Die Daten werden gelöscht, sobald sie für den Zweck ihrer Erhebung nicht mehr erforderlich sind.</p>
+    <p>Da Daten in die USA übertragen werden können, weise ich darauf hin, dass Netlify unter dem EU-US Data Privacy Framework zertifiziert ist, wodurch ein angemessenes Datenschutzniveau gewährleistet wird.</p>
+
+    <p><strong>Schriftarten.</strong> Diese Website verwendet die Schriftarten „Fraunces“ und „Work Sans“. Sie werden direkt von diesem Server geladen. Es wird keine Verbindung zu Servern von Google oder anderen Schriftanbietern aufgebaut.</p>
+
+    <p><strong>Kontaktformular (Netlify Forms).</strong> Wenn Ihr mir per Kontaktformular eine Anfrage schickt, werden Eure Angaben aus dem Formular inklusive der von Euch angegebenen Kontaktdaten zur Bearbeitung der Anfrage und für den Fall von Anschlussfragen gespeichert. Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Eure Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist, ansonsten auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der effektiven Bearbeitung von Anfragen).</p>
+    <p>Die Formularinhalte werden technisch über die Plattform von Netlify verarbeitet, verschlüsselt entgegengenommen und mir anschließend per E-Mail zugestellt. Netlify speichert die Formulardaten in meinem Auftrag, um die Übermittlung zu ermöglichen. Ich lösche Eure Anfrage, sobald sie bearbeitet ist und der Zweck der Speicherung entfällt, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</p>
+
+    <p><strong>Anfrage per E-Mail oder Telefon.</strong> Wenn Ihr mich per E-Mail oder Telefon kontaktiert, wird Eure Anfrage inklusive aller daraus hervorgehenden personenbezogenen Daten (Name, Anfrage) zum Zweck der Bearbeitung bei mir gespeichert. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b bzw. lit. f DSGVO. Ich gebe diese Daten nicht ohne Eure Einwilligung weiter und lösche sie, sobald der Zweck der Speicherung entfällt.</p>
+
+    <p><strong>Externe Links.</strong> Diese Website enthält Links zu externen Seiten (z. B. Instagram, Hebammenpraxis Familienbande). Es werden keine Inhalte dieser Anbieter eingebunden. Erst wenn Ihr einen Link anklickt, verlasst Ihr diese Website; ab dann gelten die Datenschutzbestimmungen des jeweiligen Anbieters.</p>
+
+    <p><strong>Cookies.</strong> Ich verzichte auf dieser Website bewusst auf Analyse-Tools (wie Google Analytics) oder Werbe-Tracking von Drittanbietern. Es werden lediglich technisch notwendige Cookies gesetzt, die für den sicheren und fehlerfreien Betrieb der Website erforderlich sind (z. B. zur Abwehr von Spam-Bots beim Kontaktformular). Eine Einwilligung über einen gesonderten Cookie-Banner ist daher nicht erforderlich.</p>
+
+    <h3>4. Eure Rechte</h3>
+    <p>Ihr habt jederzeit das Recht auf unentgeltliche Auskunft über Herkunft, Empfänger und Zweck Eurer gespeicherten personenbezogenen Daten (Art. 15 DSGVO). Ihr habt außerdem das Recht auf Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18) und Datenübertragbarkeit (Art. 20) sowie ein Widerspruchsrecht gegen die Verarbeitung auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (Art. 21). Eine erteilte Einwilligung könnt Ihr jederzeit mit Wirkung für die Zukunft widerrufen. Hierzu sowie zu weiteren Fragen zum Thema Datenschutz könnt Ihr Euch jederzeit an die oben angegebene Adresse wenden.</p>
+    <p>Außerdem steht Euch ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu: Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen, Kavalleriestraße 2–4, 40213 Düsseldorf.</p>
+
+    <p class="note">Stand: November 2026</p>
   </section>
 </main>
 
 <footer class="site">
   <div class="wrap footer-grid">
     <div>
-      <span class="brand-name" style="font-family: var(--font-display); font-size:1.2rem;">Ruby — rund um dein Baby</span>
-      <p style="color: rgba(251,246,241,0.75); margin-top:8px;">Anne Salomon · Mohlbergstraße 9 · 50354 Hürth</p>
+      <span class="brand-name footer-brand">Ruby — rund um dein Baby</span>
+      <p class="footer-address">Anne Salomon · Mohlbergstraße 9 · 50354 Hürth</p>
     </div>
     <ul class="footer-links">
       <li><a href="ueber-anne.html">Über Anne</a></li>

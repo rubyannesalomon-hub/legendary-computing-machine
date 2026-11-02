@@ -2,6 +2,65 @@
    RUBY – rund um dein Baby
    Design tokens — "Die ruhige Stunde"
    ============================================================ */
+
+/* ---------- Schriften (lokal gehostet, keine Verbindung zu Google) ---------- */
+@font-face {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/fraunces-latin-500-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/fraunces-latin-600-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Fraunces";
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/fraunces-latin-500-italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Fraunces";
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/fraunces-latin-600-italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/work-sans-latin-400-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/work-sans-latin-500-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/work-sans-latin-600-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/work-sans-latin-700-normal.woff2") format("woff2");
+}
+
 :root {
   --paper: #F3EEE4;
   --paper-deep: #EAE2D3;
@@ -20,6 +79,7 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
   .wave-anim { animation: drift 9s ease-in-out infinite; }
 }
 @keyframes drift {
@@ -28,7 +88,6 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
@@ -42,6 +101,34 @@ body {
 
 img { max-width: 100%; display: block; }
 a { color: inherit; }
+
+/* Sichtbarer Tastaturfokus */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--dusk);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+footer.site a:focus-visible,
+.contact-card a:focus-visible {
+  outline-color: var(--paper);
+}
+
+/* Sprunglink für Tastatur- und Screenreader-Nutzer */
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -60px;
+  z-index: 100;
+  background: var(--dusk-deep);
+  color: var(--paper);
+  padding: 10px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: top 0.2s ease;
+}
+.skip-link:focus { top: 12px; }
 
 h1, h2, h3 {
   font-family: var(--font-display);
@@ -77,7 +164,8 @@ header.site {
   position: sticky;
   top: 0;
   z-index: 40;
-  background: rgba(251, 246, 241, 0.92);
+  background: rgba(243, 238, 228, 0.92);
+  -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--line);
   transition: box-shadow 0.2s ease;
@@ -174,15 +262,20 @@ header.site.scrolled { box-shadow: 0 4px 18px rgba(46, 42, 40, 0.06); }
 .nav-toggle.open .bar:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
 .nav-backdrop {
-  display: none;
   position: fixed;
   inset: 0;
   background: rgba(46, 42, 40, 0.35);
   z-index: 39;
   opacity: 0;
-  transition: opacity 0.25s ease;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
 }
-.nav-backdrop.open { display: block; opacity: 1; }
+.nav-backdrop.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
 
 /* ---------- Wave divider (signature element) ---------- */
 .wave-divider {
@@ -198,7 +291,7 @@ header.site.scrolled { box-shadow: 0 4px 18px rgba(46, 42, 40, 0.06); }
   grid-template-columns: 1.1fr 0.9fr;
   gap: 48px;
   align-items: center;
-  padding: 64px 0 40px;
+  padding: 64px 28px 40px;
 }
 .hero p.lead { font-size: 1.15rem; max-width: 46ch; }
 .hero-figure {
@@ -228,11 +321,14 @@ header.site.scrolled { box-shadow: 0 4px 18px rgba(46, 42, 40, 0.06); }
 .btn-ghost { border-color: var(--dusk); color: var(--dusk-deep); }
 .btn-ghost:hover { background: var(--dusk); color: var(--paper); }
 .btn-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 1.6em; }
+button.btn { font-family: var(--font-body); cursor: pointer; }
 
 /* ---------- Sections ---------- */
 section { padding: 64px 0; }
 section.tinted { background: var(--paper-deep); }
 .section-head { max-width: 62ch; margin-bottom: 2.4em; }
+.page-head { padding-top: 56px; padding-bottom: 16px; }
+.page-head .lead { max-width: 60ch; }
 
 /* Service cards */
 .grid-services {
@@ -249,7 +345,15 @@ section.tinted { background: var(--paper-deep); }
   flex-direction: column;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(38, 34, 32, 0.08); }
+/* Startseite: vier gleich breite Karten; Leistungsseite: zwei Spalten wegen längerer Texte */
+.grid-services--four { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.grid-services--two { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 760px) {
+  .grid-services--two { grid-template-columns: 1fr; }
+}
+a.card { text-decoration: none; color: inherit; }
+a.card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(38, 34, 32, 0.08); }
+a.card:focus-visible { border-radius: 30px 30px 12px 30px; }
 .card .thumb {
   aspect-ratio: 16/10;
   overflow: hidden;
@@ -317,6 +421,10 @@ section.tinted { background: var(--paper-deep); }
 .course img { border-radius: var(--radius); aspect-ratio: 4/3; object-fit: cover; }
 .course .loc { color: var(--clay-deep); font-weight: 600; font-size: 0.9rem; margin-bottom: 0.4em; }
 
+/* Hinweis-Text (z. B. Gesundheitshinweis) */
+.note { font-size: 0.9rem; color: var(--ink-soft); max-width: 62ch; }
+.cta-center { max-width: 700px; text-align: center; }
+
 /* Contact */
 .contact-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 48px; }
 .contact-card {
@@ -328,7 +436,7 @@ section.tinted { background: var(--paper-deep); }
 .contact-card h3 { color: var(--paper); }
 .contact-card a { color: var(--paper); text-decoration: underline; text-underline-offset: 3px; }
 .contact-line { display: flex; gap: 12px; margin-bottom: 16px; align-items: flex-start; }
-.contact-line .ico { color: var(--moss); font-size: 1.1rem; }
+.contact-line .ico { font-size: 1.1rem; }
 
 form.contact-form { display: grid; gap: 16px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
@@ -349,6 +457,8 @@ form.contact-form { display: grid; gap: 16px; }
   border-color: var(--dusk);
 }
 .contact-form textarea { resize: vertical; min-height: 120px; }
+.form-note { font-size: 0.85rem; color: var(--ink-soft); margin: 0; }
+.form-note a { color: var(--dusk-deep); }
 
 /* Footer */
 footer.site {
@@ -358,38 +468,63 @@ footer.site {
   margin-top: 40px;
 }
 .footer-grid { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 24px; }
+.footer-brand { font-family: var(--font-display); font-size: 1.2rem; }
+.footer-address { color: rgba(243, 238, 228, 0.75); margin-top: 8px; }
 footer.site a { color: var(--paper-deep); text-decoration: none; }
-footer.site a:hover { color: var(--moss); }
+footer.site a:hover { color: var(--paper); text-decoration: underline; text-underline-offset: 3px; }
 .footer-links { display: flex; gap: 22px; list-style: none; padding: 0; margin: 0; flex-wrap: wrap; }
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,0.15);
   margin-top: 28px; padding-top: 20px;
-  font-size: 0.85rem; color: rgba(251,246,241,0.65);
+  font-size: 0.85rem; color: rgba(243, 238, 228, 0.65);
   display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;
 }
 .social { display: inline-flex; align-items: center; gap: 8px; }
 
 /* Impressum text page */
+.legal { padding-top: 56px; max-width: 760px; }
 .legal h2 { margin-top: 1.4em; }
 .legal p { color: var(--ink); }
 
-/* ---------- NEUES KOMPAKTES DROPDOWN MENÜ ---------- */
+/* Danke- und 404-Seite */
+.center-page { padding-top: 80px; padding-bottom: 80px; text-align: center; }
+.center-page .lead { max-width: 60ch; margin: 24px auto; }
+.center-page .btn-row { justify-content: center; margin-top: 40px; }
+
+/* ---------- Tablet & Handy: Spalten untereinander ---------- */
+@media (max-width: 900px) {
+  .hero, .two-col, .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+  .course { grid-template-columns: 1fr; gap: 20px; }
+  .hero { padding-top: 40px; }
+  .hero-figure { max-width: 420px; margin: 0 auto; width: 100%; }
+  .two-col img { width: 100%; max-width: 480px; margin: 0 auto; }
+}
+
+@media (max-width: 560px) {
+  body { font-size: 16px; }
+  .form-row { grid-template-columns: 1fr; }
+  section { padding: 48px 0; }
+  .contact-card { padding: 28px 22px; }
+  .footer-links { gap: 14px 22px; }
+}
+
+/* ---------- Kompaktes Dropdown-Menü (Handy) ---------- */
 @media (max-width: 720px) {
   .links {
     position: absolute;
-    top: 100%; /* Menü klappt exakt unter dem Header auf */
+    top: 100%; /* klappt direkt unter dem Header auf */
     left: 0;
     width: 100%;
-    background: var(--paper); /* Gleiche Farbe wie der Hintergrund */
+    background: var(--paper);
     border-bottom: 1px solid var(--line);
     box-shadow: 0 12px 24px rgba(46, 42, 40, 0.08);
     padding: 16px 0 24px;
-    
-    /* Zarte Einblend-Animation statt wildem Reinsliden */
+
+    /* Sanftes Einblenden */
     opacity: 0;
     visibility: hidden;
     transform: translateY(-8px);
-    transition: all 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
     z-index: 41;
   }
 
@@ -403,7 +538,7 @@ footer.site a:hover { color: var(--moss); }
     flex-direction: column;
     align-items: center;
     width: 100%;
-    gap: 16px; /* Kompakt und aufgeräumt */
+    gap: 16px;
   }
 
   .links ul li {
@@ -415,21 +550,14 @@ footer.site a:hover { color: var(--moss); }
     display: inline-block;
     padding: 10px 20px;
     margin: 0;
-    
-    /* Ganz normale Schriftgröße für optimale Lesbarkeit */
     font-family: var(--font-body);
-    font-size: 1.15rem; 
+    font-size: 1.15rem;
     font-weight: 500;
     color: var(--ink);
   }
 
-  /* Desktop-Unterstrich verstecken */
-  .links a::after {
-    display: none;
-  }
-
   .links a.active {
-    color: var(--clay);
+    color: var(--clay-deep);
     font-weight: 600;
   }
 

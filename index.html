@@ -4,46 +4,78 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Babymassage &amp; Schlafberatung | Ruby rund um dein Baby | Hürth</title>
-<meta name="description" content="Babymassage in familiärer Atmosphäre, individuelle Schlafberatung für Euch und euer Baby und Unterstützung beim ersten Füttern. RUBY rund um dein Baby in Hürth.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="description" content="Babymassage in familiärer Atmosphäre, individuelle Schlafberatung für Euch und Euer Baby und Unterstützung beim ersten Füttern. RUBY rund um dein Baby in Hürth.">
+<link rel="canonical" href="https://ruby-anne.de/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="Ruby – rund um dein Baby">
+<meta property="og:title" content="Babymassage &amp; Schlafberatung | Ruby rund um dein Baby | Hürth">
+<meta property="og:description" content="Babymassage in familiärer Atmosphäre, individuelle Schlafberatung für Euch und Euer Baby und Unterstützung beim ersten Füttern. RUBY rund um dein Baby in Hürth.">
+<meta property="og:url" content="https://ruby-anne.de/">
+<link rel="preload" href="fonts/work-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/fraunces-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="icon" type="image/png" href="images/favicon-32.png">
 <link rel="stylesheet" href="css/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Ruby – rund um dein Baby",
+  "description": "Babymassage, Babyschlafcoaching, Beikostberatung und Kinesiotaping in Hürth.",
+  "url": "https://ruby-anne.de/",
+  "telephone": "+491772582071",
+  "email": "ruby.annesalomon@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Mohlbergstraße 9",
+    "postalCode": "50354",
+    "addressLocality": "Hürth",
+    "addressCountry": "DE"
+  },
+  "founder": {
+    "@type": "Person",
+    "name": "Anne Salomon"
+  },
+  "sameAs": [
+    "https://www.instagram.com/ruby_annesalomon/"
+  ]
+}
+</script>
 </head>
 <body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
 
 <header class="site">
   <div class="nav">
     <a class="brand" href="index.html">
-      <span class="brand-mark"><img src="images/logo_transparent.avif" alt="Ruby Logo"></span>
+      <span class="brand-mark"><img src="images/logo_transparent.avif" alt="Ruby Logo" width="62" height="62"></span>
       <span>
         <span class="brand-name">Ruby</span>
         <span class="brand-tag">rund um dein Baby</span>
       </span>
     </a>
-    <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">
+    <button class="nav-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="hauptmenue">
       <span class="bar"></span><span class="bar"></span><span class="bar"></span>
     </button>
-    <nav class="links" aria-label="Hauptnavigation">
+    <nav class="links" id="hauptmenue" aria-label="Hauptnavigation">
       <ul>
-      <li><a href="index.html" class="active">Start</a></li>
+      <li><a href="index.html" class="active" aria-current="page">Start</a></li>
       <li><a href="ueber-anne.html">Über Anne</a></li>
       <li><a href="leistungen.html">Leistungen</a></li>
       <li><a href="kurse.html">Kurse</a></li>
       <li><a href="kontakt.html">Kontakt</a></li>
-    </ul>
+      </ul>
     </nav>
   </div>
 </header>
 <div class="nav-backdrop"></div>
 
-<main>
+<main id="main">
   <section class="wrap hero">
     <div>
       <span class="eyebrow">Babymassage · Schlafcoaching · Beikost · Hürth</span>
       <h1>Alles über Ruby — rund um dein Baby</h1>
-      <p class="lead">Über meine vier eigenen Kinder und mein Umfeld im Mama-Dasein habe ich hautnah mitbekommen, wie wichtig eine liebevolle, professionelle Begleitung ist. Als gelernte Kinderkrankenschwester begleite ich Euch und Euer Baby durch Schlaf, Beikost, Entspannung und Schmerzlinderung.</p>
+      <p class="lead">Über meine vier eigenen Kinder und mein Umfeld im Mama-Dasein habe ich hautnah mitbekommen, wie wichtig eine liebevolle, professionelle Begleitung ist. Als gelernte Kinderkrankenschwester begleite ich Euch und Euer Baby bei den Themen Schlaf, Beikost und Entspannung.</p>
       <p>Ich weiß, wie schwer es geworden ist, eine Hebamme zu finden — deshalb arbeite ich gerne Hand in Hand mit Eurer Hebamme, damit Ihr rundum gut betreut seid.</p>
       <div class="btn-row">
         <a class="btn btn-primary" href="kontakt.html">Termin anfragen</a>
@@ -51,12 +83,12 @@
       </div>
     </div>
     <div class="hero-figure">
-      <img src="images/mother-and-baby-in-autumn.avif" alt="Mutter mit Baby im Herbst" loading="eager">
+      <img src="images/mother-and-baby-in-autumn.avif" alt="Mutter mit Baby im Herbst" loading="eager" fetchpriority="high">
     </div>
   </section>
 
   <div class="wave-divider" aria-hidden="true">
-    <svg viewBox="0 0 1200 60" preserveAspectRatio="none">
+    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" focusable="false">
       <path class="wave-anim" d="M0,32 C80,10 160,54 240,28 C320,8 400,50 480,26 C560,6 640,48 720,30 C800,10 880,46 960,24 C1040,8 1120,42 1200,28 L1200,60 L0,60 Z" fill="var(--dusk)" opacity="0.14"></path>
     </svg>
   </div>
@@ -67,42 +99,42 @@
         <span class="eyebrow">Meine Leistungen</span>
         <h2>Vier Wege, wie ich Euch unterstützen kann</h2>
       </div>
-      <div class="grid-services">
-        <div class="card">
-          <div class="thumb"><img src="images/babymassage-thumb.avif" alt="Babymassage"></div>
+      <div class="grid-services grid-services--four">
+        <a class="card" href="leistungen.html">
+          <div class="thumb"><img src="images/babymassage-thumb.avif" alt="Babymassage" loading="lazy" decoding="async"></div>
           <div class="body">
             <h3>Babymassage</h3>
-            <p>Geborgenheit, Nähe und Linderung bei Unruhe oder Koliken — im Einzeltermin oder im Kurs.</p>
+            <p>Geborgenheit und Nähe für Euer Baby — im Einzeltermin oder im Kurs.</p>
           </div>
-        </div>
-        <div class="card">
-          <div class="thumb"><img src="images/babyschlafcoaching-thumb.avif" alt="Babyschlafcoaching"></div>
+        </a>
+        <a class="card" href="leistungen.html">
+          <div class="thumb"><img src="images/babyschlafcoaching-thumb.avif" alt="Babyschlafcoaching" loading="lazy" decoding="async"></div>
           <div class="body">
             <h3>Babyschlafcoaching</h3>
-            <p>Zurück in erholsame Nächte — ohne Schreienlassen, mit einem Weg, der zu Eurer Familie passt.</p>
+            <p>Das Schlafverhalten Eures Babys verstehen — ohne Schreienlassen, mit einem Weg, der zu Eurer Familie passt.</p>
           </div>
-        </div>
-        <div class="card">
-          <div class="thumb"><img src="images/beikostberatung-leistung.avif" alt="Beikostberatung"></div>
+        </a>
+        <a class="card" href="leistungen.html">
+          <div class="thumb"><img src="images/beikostberatung-leistung.avif" alt="Beikostberatung" loading="lazy" decoding="async"></div>
           <div class="body">
             <h3>Beikostberatung</h3>
             <p>Breikost oder Baby-led Weaning? Antworten auf all Eure Fragen rund ums Zufüttern.</p>
           </div>
-        </div>
-        <div class="card">
-          <div class="thumb"><img src="images/kinesiotaping-leistung.avif" alt="Kinesiotaping"></div>
+        </a>
+        <a class="card" href="leistungen.html">
+          <div class="thumb"><img src="images/kinesiotaping-leistung.avif" alt="Kinesiotaping" loading="lazy" decoding="async"></div>
           <div class="body">
             <h3>Kinesiotaping</h3>
-            <p>Sanfte Linderung typischer Beschwerden in und nach der Schwangerschaft — ganz ohne Medikamente.</p>
+            <p>Sanftes Taping zur Begleitung in und nach der Schwangerschaft.</p>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </section>
 
   <section>
     <div class="wrap two-col">
-      <img src="images/mutter-baby-laechelt-alt.avif" alt="Anne mit Baby">
+      <img src="images/mutter-baby-laechelt-alt.avif" alt="Mutter mit Baby im Arm" loading="lazy" decoding="async">
       <div>
         <span class="eyebrow">Eure Anne</span>
         <h2>Fachwissen trifft eigene Mama-Erfahrung</h2>
@@ -119,8 +151,8 @@
 <footer class="site">
   <div class="wrap footer-grid">
     <div>
-      <span class="brand-name" style="font-family: var(--font-display); font-size:1.2rem;">Ruby — rund um dein Baby</span>
-      <p style="color: rgba(251,246,241,0.75); margin-top:8px;">Anne Salomon · Mohlbergstraße 9 · 50354 Hürth</p>
+      <span class="brand-name footer-brand">Ruby — rund um dein Baby</span>
+      <p class="footer-address">Anne Salomon · Mohlbergstraße 9 · 50354 Hürth</p>
     </div>
     <ul class="footer-links">
       <li><a href="ueber-anne.html">Über Anne</a></li>

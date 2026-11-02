@@ -4,45 +4,52 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kontakt | Ruby rund um dein Baby | Hürth</title>
-<meta name="description" content="Nimm Kontakt zu Anne auf — für Babymassage, Schlafcoaching, Beikostberatung oder Kinesiotaping in Hürth.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="description" content="Nehmt Kontakt zu Anne auf — für Babymassage, Schlafcoaching, Beikostberatung oder Kinesiotaping in Hürth.">
+<link rel="canonical" href="https://ruby-anne.de/kontakt">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="Ruby – rund um dein Baby">
+<meta property="og:title" content="Kontakt | Ruby rund um dein Baby | Hürth">
+<meta property="og:description" content="Nehmt Kontakt zu Anne auf — für Babymassage, Schlafcoaching, Beikostberatung oder Kinesiotaping in Hürth.">
+<meta property="og:url" content="https://ruby-anne.de/kontakt">
+<link rel="preload" href="fonts/work-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/fraunces-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="icon" type="image/png" href="images/favicon-32.png">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
 
 <header class="site">
   <div class="nav">
     <a class="brand" href="index.html">
-      <span class="brand-mark"><img src="images/logo_transparent.avif" alt="Ruby Logo"></span>
+      <span class="brand-mark"><img src="images/logo_transparent.avif" alt="Ruby Logo" width="62" height="62"></span>
       <span>
         <span class="brand-name">Ruby</span>
         <span class="brand-tag">rund um dein Baby</span>
       </span>
     </a>
-    <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">
+    <button class="nav-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="hauptmenue">
       <span class="bar"></span><span class="bar"></span><span class="bar"></span>
     </button>
-    <nav class="links" aria-label="Hauptnavigation">
+    <nav class="links" id="hauptmenue" aria-label="Hauptnavigation">
       <ul>
       <li><a href="index.html">Start</a></li>
       <li><a href="ueber-anne.html">Über Anne</a></li>
       <li><a href="leistungen.html">Leistungen</a></li>
       <li><a href="kurse.html">Kurse</a></li>
-      <li><a href="kontakt.html" class="active">Kontakt</a></li>
-    </ul>
+      <li><a href="kontakt.html" class="active" aria-current="page">Kontakt</a></li>
+      </ul>
     </nav>
   </div>
 </header>
 <div class="nav-backdrop"></div>
 
-<main>
-  <section class="wrap" style="padding-top:56px; padding-bottom:16px;">
-    <span class="eyebrow">Schreib mir</span>
+<main id="main">
+  <section class="wrap page-head">
+    <span class="eyebrow">Schreibt mir</span>
     <h1>Kontakt</h1>
-    <p class="lead" style="max-width:60ch;">Ich freue mich auf Eure Nachricht — meldet Euch gerne per Formular, Telefon oder E-Mail.</p>
+    <p class="lead">Ich freue mich auf Eure Nachricht — meldet Euch gerne per Formular, Telefon oder E-Mail.</p>
   </section>
 
   <section style="padding-top:0;">
@@ -50,56 +57,53 @@
 
       <div class="contact-card">
         <h3>So erreicht Ihr mich</h3>
-        <div class="contact-line"><span class="ico">📍</span><span>Mohlbergstraße 9<br>50354 Hürth, Deutschland</span></div>
-        <div class="contact-line"><span class="ico">✉️</span><span><a href="mailto:ruby.annesalomon@gmail.com">ruby.annesalomon@gmail.com</a></span></div>
-        <div class="contact-line"><span class="ico">📞</span><span><a href="tel:+491772582071">0177 2582071</a></span></div>
-        <div class="contact-line"><span class="ico">📷</span><span><a href="https://www.instagram.com/ruby_annesalomon/" target="_blank" rel="noopener">@ruby_annesalomon</a></span></div>
+        <div class="contact-line"><span class="ico" aria-hidden="true">📍</span><span>Mohlbergstraße 9<br>50354 Hürth, Deutschland</span></div>
+        <div class="contact-line"><span class="ico" aria-hidden="true">✉️</span><span><a href="mailto:ruby.annesalomon@gmail.com">ruby.annesalomon@gmail.com</a></span></div>
+        <div class="contact-line"><span class="ico" aria-hidden="true">📞</span><span><a href="tel:+491772582071">0177 2582071</a></span></div>
+        <div class="contact-line"><span class="ico" aria-hidden="true">📷</span><span><a href="https://www.instagram.com/ruby_annesalomon/" target="_blank" rel="noopener">@ruby_annesalomon</a></span></div>
       </div>
 
-     <form class="contact-form" name="kontakt" method="POST" action="erfolg" data-netlify="true" netlify-honeypot="bot-field">
-  <input type="hidden" name="form-name" value="kontakt">
-  <input type="hidden" name="subject" value="Neue Nachricht von ruby-anne.de">
-  
-  <p style="display:none">
-    <label>Nicht ausfüllen: <input name="bot-field"></label>
-  </p>
+      <form class="contact-form" name="kontakt" method="POST" action="/erfolg.html" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="kontakt">
+        <input type="hidden" name="subject" value="Neue Nachricht von ruby-anne.de">
 
-  <div class="form-row">
-    <div>
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required>
-    </div>
-    <div>
-      <label for="email">E-Mail-Adresse</label>
-      <input type="email" id="email" name="email" required>
-    </div>
-  </div>
-  
-  <div class="form-row">
-    <div>
-      <label for="phone">Telefonnummer</label>
-      <input type="tel" id="phone" name="telefon">
-    </div>
-    <div>
-      <label for="address">Adresse</label>
-      <input type="text" id="address" name="adresse">
-    </div>
-  </div>
-  
-  <div>
-    <label for="subject">Betreff</label>
-    <input type="text" id="subject" name="betreff">
-  </div>
-  
-  <div>
-    <label for="message">Nachricht</label>
-    <textarea id="message" name="nachricht" required></textarea>
-  </div>
-  
-  <div class="btn-row">
-    <button type="submit" class="btn btn-primary" style="border:none; cursor:pointer;">Absenden</button>
-  </div>
-</form>
+        <p hidden>
+          <label>Nicht ausfüllen: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+        </p>
+
+        <div class="form-row">
+          <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" autocomplete="name" required>
+          </div>
+          <div>
+            <label for="email">E-Mail-Adresse</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div>
+            <label for="phone">Telefonnummer (optional)</label>
+            <input type="tel" id="phone" name="telefon" autocomplete="tel">
+          </div>
+          <div>
+            <label for="betreff">Betreff</label>
+            <input type="text" id="betreff" name="betreff">
+          </div>
+        </div>
+
+        <div>
+          <label for="message">Nachricht</label>
+          <textarea id="message" name="nachricht" required></textarea>
+        </div>
+
+        <p class="form-note">Mit dem Absenden stimmt Ihr zu, dass ich Eure Angaben zur Bearbeitung Eurer Anfrage speichere. Mehr dazu in der <a href="impressum.html#datenschutz">Datenschutzerklärung</a>.</p>
+
+        <div class="btn-row" style="margin-top:0;">
+          <button type="submit" class="btn btn-primary" style="border:none;">Absenden</button>
+        </div>
+      </form>
 
     </div>
   </section>
@@ -108,8 +112,8 @@
 <footer class="site">
   <div class="wrap footer-grid">
     <div>
-      <span class="brand-name" style="font-family: var(--font-display); font-size:1.2rem;">Ruby — rund um dein Baby</span>
-      <p style="color: rgba(251,246,241,0.75); margin-top:8px;">Anne Salomon · Mohlbergstraße 9 · 50354 Hürth</p>
+      <span class="brand-name footer-brand">Ruby — rund um dein Baby</span>
+      <p class="footer-address">Anne Salomon · Mohlbergstraße 9 · 50354 Hürth</p>
     </div>
     <ul class="footer-links">
       <li><a href="ueber-anne.html">Über Anne</a></li>

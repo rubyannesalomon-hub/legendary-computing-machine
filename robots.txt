@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /erfolg
+
+Sitemap: https://ruby-anne.de/sitemap.xml

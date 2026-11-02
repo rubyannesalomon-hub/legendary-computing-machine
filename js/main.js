@@ -9,7 +9,10 @@ document.addEventListener("DOMContentLoaded", function () {
     links.classList.remove("open");
     toggle && toggle.classList.remove("open");
     backdrop && backdrop.classList.remove("open");
-    toggle && toggle.setAttribute("aria-expanded", "false");
+    if (toggle) {
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Menü öffnen");
+    }
     document.body.style.overflow = "";
   }
 
@@ -18,7 +21,10 @@ document.addEventListener("DOMContentLoaded", function () {
     links.classList.add("open");
     toggle && toggle.classList.add("open");
     backdrop && backdrop.classList.add("open");
-    toggle && toggle.setAttribute("aria-expanded", "true");
+    if (toggle) {
+      toggle.setAttribute("aria-expanded", "true");
+      toggle.setAttribute("aria-label", "Menü schließen");
+    }
     document.body.style.overflow = "hidden";
   }
 
@@ -32,11 +38,23 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     backdrop && backdrop.addEventListener("click", closeMenu);
     document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") closeMenu();
+      if (e.key === "Escape" && links.classList.contains("open")) {
+        closeMenu();
+        toggle.focus();
+      }
     });
+
+    // Fenster wird breiter (Handy drehen, Tablet): Menü schließen und Scroll-Sperre lösen
+    var desktop = window.matchMedia("(min-width: 721px)");
+    var onChange = function (e) { if (e.matches) closeMenu(); };
+    if (desktop.addEventListener) {
+      desktop.addEventListener("change", onChange);
+    } else if (desktop.addListener) {
+      desktop.addListener(onChange); // ältere Safari-Versionen
+    }
   }
 
-  // Subtle shadow on the sticky header once the page scrolls
+  // Dezenter Schatten am Header, sobald gescrollt wird
   if (header) {
     var onScroll = function () {
       header.classList.toggle("scrolled", window.scrollY > 4);
